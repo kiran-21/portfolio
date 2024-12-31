@@ -5,7 +5,7 @@ export default function Footer () {
     return(
         <>
         <Container bg="dark" variant="dark">
-            
+            This is footer
         </Container>
         </>
 
