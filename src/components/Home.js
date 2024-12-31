@@ -4,8 +4,10 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import About from './About';
+import Project from './Project';
+import Contact from './Contact';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
@@ -22,7 +24,7 @@ export default function Home() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Check if screen size is 'sm' or below
 
   return (
-    <Box sx={{ width: '100%', height: '75vh' }}>
+    <Box sx={{ width: '100%', paddingX: '0px', margin: '0', boxSizing: 'border-box' }}>
       {/* Show Tabs for larger screens */}
       {!isMobile ? (
         <Tabs
@@ -67,10 +69,10 @@ export default function Home() {
       )}
 
       {/* Render Components based on selected tab */}
-      <Box sx={{ padding: 2 }}>
+      <Box sx={{ padding: 2, margin:"0" }}>
         {value === 'About' && <About />}
-        {value === 'Project' && <Typography>Project Content</Typography>}
-        {value === 'Contact' && <Typography>Contact Content</Typography>}
+        {value === 'Project' && <Project/>}
+        {value === 'Contact' && <Contact/>}
       </Box>
     </Box>
   );

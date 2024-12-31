@@ -13,7 +13,7 @@ export default function Footer() {
       sx={{
         backgroundColor: "#343a40", // Dark gray
         color: "white", // White text
-        padding: "20px 0",
+        padding: "10px 0",
         textAlign: "center",
         marginTop: "auto", // Push footer to bottom if needed
       }}

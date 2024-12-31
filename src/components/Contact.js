@@ -1,15 +1,18 @@
 import { Box } from "@mui/material";
 
-export default function Project (){
+const Contact = ()=>{
+
     return(
         <>
-            <Box 
+        <Box 
                 sx={{
                     height: "75vh" // Sets height to 75% of the viewport height
                 }}
             >
-                this is project
+                this is contact
             </Box>
         </>
-    );
+    )
 }
+
+export default Contact;
