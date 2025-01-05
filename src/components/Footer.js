@@ -20,6 +20,9 @@ export default function Footer() {
         marginTop: "auto", // Push footer to bottom if needed
       }}
     >
+      <Typography sx={{color:theme.palette.primary.dark, fontsize:{xs:'2rem' ,sm:'4rem'}}}>
+        CONTACT INFO
+      </Typography>
       <Grid container justifyContent="center" spacing={2}>
         {/* Social Media Links */}
         <Grid item>

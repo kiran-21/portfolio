@@ -5,12 +5,14 @@ import '@fontsource/roboto';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976D2', 
-      dark: '#000000',
-      white:'#ffffff'
+      main: '#FF9800', 
+      dark: '#0B0014',
+      white:'#FAFAFA'
     },
     secondary: {
-      main: '#FF9800', // Secondary color (orange)
+      main: '#FF9800',
+      dark:'#191919',
+      white:'#E6E8E6'
     },
     background: {
       default: '#F5F5F5',
@@ -18,7 +20,7 @@ const theme = createTheme({
     },
     text: {
       primary: '#fefefe', // Primary text (black)
-      secondary: '#757575', // Secondary text (gray)
+      secondary: '#FAFAFA', // Secondary text (gray)
     },
     success: {
       main: '#4CAF50', // Success color (green)

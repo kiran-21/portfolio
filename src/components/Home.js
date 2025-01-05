@@ -1,74 +1,35 @@
-import React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Link from '@mui/material/Link';
-// import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
 import About from './About';
 import Project from './Project';
-// import Contact from './Contact';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+import Header from './Header';
 
 export default function Home() {
-  const [value, setValue] = React.useState('About');
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const theme = useTheme();
+  const [selectedTab, setSelectedTab] = useState('About'); // Default Tab: About
+
+  const handleNavigation = (tab) => {
+    setSelectedTab(tab); // Set the selected tab dynamically
   };
 
-  // Detect screen size for responsiveness
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); 
-
   return (
-    <Box sx={{ width: '100%', paddingX: '0px', margin: '0', boxSizing: 'border-box' , background:theme.palette.primary.dark}}>
-      {!isMobile ? (
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          textColor="secondary"
-          indicatorColor="secondary"
-          aria-label="secondary tabs example"
-        >
-          <Tab value="About" label="About" />
-          <Tab value="Project" label="Project" />
-          {/* <Tab value="Contact" label="Contact" /> */}
-        </Tabs>
-      ) : (
-        // Show Breadcrumbs for smaller screens
-        <Breadcrumbs aria-label="breadcrumb" sx={{ padding: 1 }}>
-          <Link
-            color={value === 'About' ? 'text.primary' : 'inherit'}
-            underline={value === 'About' ? 'none' : 'hover'}
-            onClick={() => setValue('About')}
-            sx={{ cursor: 'pointer' }}
-          >
-            About
-          </Link>
-          <Link
-            color={value === 'Project' ? 'text.primary' : 'inherit'}
-            underline={value === 'Project' ? 'none' : 'hover'}
-            onClick={() => setValue('Project')}
-            sx={{ cursor: 'pointer' }}
-          >
-            Project
-          </Link>
-          {/* <Link
-            color={value === 'Contact' ? 'text.primary' : 'inherit'}
-            underline={value === 'Contact' ? 'none' : 'hover'}
-            onClick={() => setValue('Contact')}
-            sx={{ cursor: 'pointer' }}
-          >
-            Contact
-          </Link> */}
-        </Breadcrumbs>
-      )}
-      {/* Render Components based on selected tab */}
-      <Box sx={{ padding: 2, margin:"0" }}>
-        {value === 'About' && <About />}
-        {value === 'Project' && <Project/>}
-        {/* {value === 'Contact' && <Contact/>} */}
+    <Box
+      sx={{
+        width: '100%',
+        paddingX: '0px',
+        margin: '0',
+        boxSizing: 'border-box',
+        background: theme.palette.primary.dark,
+      }}
+    >
+      {/* Header Component */}
+      <Header onNavigate={handleNavigation} />
+
+      {/* Render Sections Based on Selected Tab */}
+      <Box sx={{ padding: 2, margin: '0' }}>
+        {selectedTab === 'About' && <About />}
+        {selectedTab === 'Project' && <Project />}
       </Box>
     </Box>
   );
