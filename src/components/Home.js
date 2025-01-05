@@ -7,25 +7,22 @@ import Link from '@mui/material/Link';
 // import Typography from '@mui/material/Typography';
 import About from './About';
 import Project from './Project';
-import Contact from './Contact';
+// import Contact from './Contact';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 
 export default function Home() {
   const [value, setValue] = React.useState('About');
-
-  // Handle tab change
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   // Detect screen size for responsiveness
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // Check if screen size is 'sm' or below
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); 
 
   return (
-    <Box sx={{ width: '100%', paddingX: '0px', margin: '0', boxSizing: 'border-box' }}>
-      {/* Show Tabs for larger screens */}
+    <Box sx={{ width: '100%', paddingX: '0px', margin: '0', boxSizing: 'border-box' , background:theme.palette.primary.dark}}>
       {!isMobile ? (
         <Tabs
           value={value}
@@ -36,7 +33,7 @@ export default function Home() {
         >
           <Tab value="About" label="About" />
           <Tab value="Project" label="Project" />
-          <Tab value="Contact" label="Contact" />
+          {/* <Tab value="Contact" label="Contact" /> */}
         </Tabs>
       ) : (
         // Show Breadcrumbs for smaller screens
@@ -57,22 +54,21 @@ export default function Home() {
           >
             Project
           </Link>
-          <Link
+          {/* <Link
             color={value === 'Contact' ? 'text.primary' : 'inherit'}
             underline={value === 'Contact' ? 'none' : 'hover'}
             onClick={() => setValue('Contact')}
             sx={{ cursor: 'pointer' }}
           >
             Contact
-          </Link>
+          </Link> */}
         </Breadcrumbs>
       )}
-
       {/* Render Components based on selected tab */}
       <Box sx={{ padding: 2, margin:"0" }}>
         {value === 'About' && <About />}
         {value === 'Project' && <Project/>}
-        {value === 'Contact' && <Contact/>}
+        {/* {value === 'Contact' && <Contact/>} */}
       </Box>
     </Box>
   );

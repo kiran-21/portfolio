@@ -3,16 +3,18 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { useTheme } from '@mui/material/styles';
 
 export default function Footer() {
+  const theme = useTheme();
   return (
     <Container
       component="footer"
       maxWidth={false}
       sx={{
-        backgroundColor: "#343a40", // Dark gray
-        color: "white", // White text
+        backgroundColor: theme.palette.primary.white, // Dark gray
+        color: theme.palette.primary.dark, // White text
         padding: "10px 0",
         textAlign: "center",
         marginTop: "auto", // Push footer to bottom if needed
@@ -22,38 +24,28 @@ export default function Footer() {
         {/* Social Media Links */}
         <Grid item>
           <IconButton
-            href="https://www.linkedin.com/in/your-linkedin"
+            href="https://www.linkedin.com/in/kiran-s-r/"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "white", "&:hover": { color: "#0A66C2" } }} 
+            sx={{ color: theme.palette.primary.dark, "&:hover": { color: "#0A66C2" } }} 
           >
             <FaLinkedin size={24} />
           </IconButton>
         </Grid>
         <Grid item>
           <IconButton
-            href="https://www.instagram.com/your-instagram"
+            href="https://github.com/kiran-21"
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "white", "&:hover": { color: "#E4405F" } }} 
-          >
-            <FaInstagram size={24} />
-          </IconButton>
-        </Grid>
-        <Grid item>
-          <IconButton
-            href="https://github.com/your-github"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ color: "white", "&:hover": { color: "#333" } }} 
+            sx={{ color: theme.palette.primary.dark, "&:hover": { color: "#333" } }} 
           >
             <FaGithub size={24} />
           </IconButton>
         </Grid>
         <Grid item>
           <IconButton
-            href="mailto:your-email@example.com"
-            sx={{ color: "white", "&:hover": { color: "#D44638" } }}
+            href="mailto:kiranksr.sr@gmail.com"
+            sx={{ color: theme.palette.primary.dark, "&:hover": { color: "#D44638" } }}
           >
             <FaEnvelope size={24} />
           </IconButton>
@@ -61,8 +53,8 @@ export default function Footer() {
       </Grid>
 
       {/* Footer Text */}
-      <Typography variant="body2" sx={{ marginTop: 2 }}>
-        © {new Date().getFullYear()} Your Name. All rights reserved.
+      <Typography variant="body2" sx={{ marginTop: 2, color:theme.palette.secondary.main }}>
+        © {new Date().getFullYear()} Kiran S Radhakrishnan. All rights reserved.
       </Typography>
     </Container>
   );

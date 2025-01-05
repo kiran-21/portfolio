@@ -1,20 +1,23 @@
 import { createTheme } from '@mui/material/styles';
-import '@fontsource/roboto'; // Import Roboto font
+import '@fontsource/roboto'; 
 
 // Create custom theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976D2', // Primary color (blue)
+      main: '#1976D2', 
+      dark: '#000000',
+      white:'#ffffff'
     },
     secondary: {
       main: '#FF9800', // Secondary color (orange)
     },
     background: {
-      default: '#F5F5F5', // Light background
+      default: '#F5F5F5',
+      dark:'#000eee' // Light background
     },
     text: {
-      primary: '#212121', // Primary text (black)
+      primary: '#fefefe', // Primary text (black)
       secondary: '#757575', // Secondary text (gray)
     },
     success: {

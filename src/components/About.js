@@ -2,9 +2,16 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-// import Grid from '@mui/material/Grid2';
 import { motion } from 'framer-motion';
-import { useTheme } from '@mui/material/styles'; // Import useTheme to access theme dynamically
+import { useTheme } from '@mui/material/styles'; 
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
 // Animation Variants
 const sectionVariants = {
@@ -13,7 +20,7 @@ const sectionVariants = {
 };
 
 export default function About() {
-  const theme = useTheme(); // Access Material-UI theme
+  const theme = useTheme(); 
 
   return (
     <Box
@@ -25,15 +32,16 @@ export default function About() {
     >
       {/* Header */}
       <Typography
-        variant="h3"
         sx={{
           textAlign: 'center',
+          marginTop: '60px',
           marginBottom: '20px',
           fontWeight: 'bold',
           color: theme.palette.primary.secondary,
+          fontSize: { xs: '2.5rem', sm: '4rem'},
         }}
       >
-        About Me
+        Hi I am Kiran S Radhakrishnan
       </Typography>
 
       {/* Summary Section */}
@@ -41,42 +49,27 @@ export default function About() {
         <Box
           sx={{
             marginBottom: '30px',
-            display: 'flex', // Enable flexbox
-            alignItems: 'center', // Vertically align content
-            justifyContent: 'space-between', // Space between heading and content
-            gap: '20px', // Add gap between heading and content
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', 
+            gap: '20px', 
+            flexDirection:{ xs: 'column', sm: 'row' }
           }}
         >
-          {/* Left Side: Summary Title */}
-          <Box sx={{ flex: '0 0 30%' }}>
-            {' '}
-            {/* Occupies 30% width */}
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: 'medium',
-                color: theme.palette.secondary.main,
-                font:theme.typography.h1 // Use secondary color
-              }}
-            >
-              Summary
-            </Typography>
-          </Box>
-
           {/* Right Side: Summary Content */}
           <Box sx={{ flex: '1' }}>
             {' '}
             {/* Occupies remaining space */}
             <Typography
               variant="body1"
-              sx={{ textAlign: 'justify', lineHeight: 1.8, font:theme.typography.h4 }}
+              sx={{
+                textAlign: 'center',
+                lineHeight: 1.8,
+                font: theme.typography.h5,
+                color:theme.palette.secondary.main
+              }}
             >
-              I am a passionate and detail-oriented web developer with expertise
-              in React.js and modern JavaScript frameworks. I have hands-on
-              experience in designing and developing scalable web applications,
-              coupled with strong problem-solving skills and a commitment to
-              learning and growth. I aim to deliver innovative solutions and
-              provide exceptional user experiences.
+              Machine Learning Engineer | AI Enthusiast | Software Engineer | MERN Stack
             </Typography>
           </Box>
         </Box>
@@ -84,126 +77,200 @@ export default function About() {
 
       <Divider />
 
-      {/* Education Section */}
+      {/* About Me and Skills Section */}
       <motion.div variants={sectionVariants} initial="hidden" animate="visible">
         <Box
           sx={{
             marginY: '30px',
-            display: 'flex', // Flexbox layout
-            alignItems: 'flex-start', // Align content at the top
-            gap: '20px', // Space between columns
+            display: 'flex',
+            alignItems: 'flex-start',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: '20px',
           }}
         >
-          {/* Left Side: Heading */}
-          <Box sx={{ flex: '0 0 30%' }}>
-            {' '}
-            {/* Fixed 30% width */}
+          {/* About Me */}
+          <Box sx={{ flex: '1' }}>
             <Typography
               variant="h5"
               sx={{
-                fontWeight: 'medium',
+                fontWeight: 'bold',
                 marginBottom: '10px',
+                textAlign: 'center',
                 color: theme.palette.secondary.main,
-                font:theme.typography.h1
               }}
             >
-              Education
+              ABOUT ME
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{ textAlign: 'justify', lineHeight: 1.8, padding: '30px' }}
+            >
+              I am a passionate software engineer with expertise in AI, Machine
+              Learning, and full-stack development. I have worked as a web
+              developer and am now focusing on Large Language Models (LLMs),
+              data engineering, and related fields. I aim to deliver scalable
+              solutions and leverage cutting-edge technologies to drive
+              innovation and growth.
             </Typography>
           </Box>
 
-          {/* Right Side: Education Details */}
           <Box sx={{ flex: '1' }}>
-            {' '}
-            {/* Remaining space */}
-            <Box sx={{ marginBottom: '15px' }}>
-              <Typography variant="h6" sx={{ fontWeight: 'bold',  font:theme.typography.h4 }}>
-                Web Development
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: theme.palette.text.secondary }}
-              >
-               Conestoga College - Kitchener Canada | 2015 -2019
-              </Typography>
-            </Box>
-            <Box>
-              <Typography variant="h6" sx={{ fontWeight: 'bold',  font:theme.typography.h4 }}>
-                Master of Computer Applications
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: theme.palette.text.secondary }}
-              >
-                Cochin University Of science and Technology | 2019 -2022
-              </Typography>
-            </Box>
-            <Box sx={{ marginBottom: '15px' }}>
-              <Typography variant="h6" sx={{ fontWeight: 'bold',  font:theme.typography.h4 }}>
-                Bachelor in Phsyics
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: theme.palette.text.secondary }}
-              >
-               St Berchmans College - Kerala India | 2015 -2019
-              </Typography>
-            </Box>
-            
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 'bold',
+                marginBottom: '10px',
+                textAlign: 'center',
+                color: theme.palette.secondary.main,
+              }}
+            >
+              SKILLS
+            </Typography>
+            <Stack
+              direction="row"
+              spacing={1}
+              flexWrap="wrap"
+              justifyContent="center" 
+              padding="20px"
+              rowGap="15px" 
+            >
+              {[
+                'HTML5',
+                'CSS3',
+                'JavaScript',
+                'ReactJS',
+                'MERN',
+                'Data Analysis',
+                'Data Visualization',
+                'GIT',
+                'GitHub',
+                'Python',
+                'Machine Learning',
+                "LLM's",
+              ].map((skill) => (
+                <Chip
+                  key={skill}
+                  label={skill}
+                  variant="outlined"
+                  sx={{
+                    padding: '10px 15px',
+                    fontWeight: 'bold',
+                    fontSize: '0.875rem',
+                    borderRadius: '10px',
+                    boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
+                    minWidth: '120px',
+                    textAlign: 'center',
+                    '&:hover': {
+                      backgroundColor: theme.palette.secondary.main,
+                      color: theme.palette.primary.dark,
+                    }
+                  }}
+                />
+              ))}
+            </Stack>
           </Box>
         </Box>
       </motion.div>
 
       <Divider />
 
-      {/* Work Experience Section */}
+      {/* Professional and Academic Journey */}
       <motion.div variants={sectionVariants} initial="hidden" animate="visible">
         <Box
           sx={{
             marginY: '30px',
-            display: 'flex', // Flexbox layout
-            alignItems: 'flex-start', // Align content at the top
-            gap: '20px', // Space between columns
+            alignItems: 'flex-start',
           }}
         >
-          {/* Left Side: Heading */}
-          <Box sx={{ flex: '0 0 30%' }}>
-            <Typography
-              variant="h5"
-              sx={{
-                fontWeight: 'medium',
-                marginBottom: '10px',
-                color: theme.palette.secondary.main,
-                font:theme.typography.h1
-              }}
-            >
-              Work Experience
-            </Typography>
-          </Box>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 'bold',
+              marginBottom: '10px',
+              textAlign: 'center',
+              color: theme.palette.secondary.main,
+            }}
+          >
+            MY JOURNEY
+          </Typography>
 
-          {/* Right Side: Work Experience Details */}
-          <Box sx={{ flex: '1' }}>
-            {/* First Job */}
-            <Box>
-              <Typography variant="h6" sx={{ fontWeight: 'bold',  font:theme.typography.h4 }}>
-                Web Developer Intern
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{ color: theme.palette.text.secondary }}
-              >
-                Alcor Media | Jan 2024 - Present
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{ textAlign: 'justify', marginTop: '5px' , font:theme.typography.h4 }}
-              >
-                Developed responsive web pages and e-commerce platforms using
-                React.js, Material-UI, and REST APIs. Focused on user interface
-                optimization and integrated authentication systems for seamless
-                user experiences.
-              </Typography>
-            </Box>
-          </Box>
+          <Timeline position="alternate">
+            {/* Timeline Items */}
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot
+                  sx={{ background: theme.palette.secondary.main }}
+                />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  Web Developement
+                </Typography>
+
+                <Typography variant="body2">
+                  Conestoga College, Kitchener, Canada
+                </Typography>
+                <Typography variant="body2" color='#ff9800'>2023 - 2024</Typography>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot
+                  sx={{ background: theme.palette.secondary.main }}
+                />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  Web Developer
+                </Typography>
+
+                <Typography variant="body2">
+                  {' '}
+                  Tecforz Innovation kochi, Kerala, India
+                </Typography>
+                <Typography variant="body2" color='#ff9800'>2022 - 2023</Typography>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot
+                  sx={{ background: theme.palette.secondary.main }}
+                />
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  Master of Computer Applications
+                </Typography>
+                <Typography variant="body2">
+                  Cochin University of Science and Technology, Kochi, India
+                </Typography>
+                <Typography variant="body2" color='#ff9800'>2019 - 2022</Typography>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot
+                  sx={{ background: theme.palette.secondary.main }}
+                />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  Bachelor in Physics
+                </Typography>
+                <Typography variant="body2">
+                  {' '}
+                  St Berchmans College, Changanacherry, India
+                </Typography>
+                <Typography variant="body2" color='#ff9800'>2015 - 2019</Typography>
+              </TimelineContent>
+            </TimelineItem>
+          </Timeline>
         </Box>
       </motion.div>
     </Box>

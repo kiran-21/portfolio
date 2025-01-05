@@ -5,7 +5,7 @@ export default function Project (){
         <>
             <Box 
                 sx={{
-                    height: "75vh" // Sets height to 75% of the viewport height
+                    height: "75vh"
                 }}
             >
                 this is project
