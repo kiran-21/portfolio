@@ -2,6 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import Grid from "@mui/material/Grid2";
 import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles'; 
 import Chip from '@mui/material/Chip';
@@ -31,18 +32,35 @@ export default function About() {
       }}
     >
       {/* Header */}
+      <Grid>
       <Typography
         sx={{
           textAlign: 'center',
-          marginTop: '60px',
+          fontWeight: 'light',
+          marginLeft:'80px',
+          color: theme.palette.primary.white,
+          fontSize: { xs: '.5rem', sm: '1.5rem'},
+        }}
+      >
+        Hi I am
+        
+      </Typography>
+      <Typography
+        sx={{
+          textAlign: 'center',
+          // marginTop: '40px',
+          // marginLeft:'70px',
           marginBottom: '20px',
           fontWeight: 'bold',
-          color: theme.palette.primary.secondary,
+          color: theme.palette.primary.white,
           fontSize: { xs: '2.5rem', sm: '4rem'},
         }}
       >
-        Hi I am Kiran S Radhakrishnan
+        Kiran S Radhakrishnan
       </Typography>
+      
+      </Grid>
+      
 
       {/* Summary Section */}
       <motion.div variants={sectionVariants} initial="hidden" animate="visible">
@@ -64,9 +82,10 @@ export default function About() {
               variant="body1"
               sx={{
                 textAlign: 'center',
+                // marginLeft:'70px',
                 lineHeight: 1.8,
                 font: theme.typography.h5,
-                color:theme.palette.secondary.main
+                color:theme.palette.primary.main
               }}
             >
               Machine Learning Engineer | AI Enthusiast | Software Engineer | MERN Stack
@@ -96,16 +115,16 @@ export default function About() {
                 fontWeight: 'bold',
                 marginBottom: '10px',
                 textAlign: 'center',
-                color: theme.palette.secondary.main,
+                color: theme.palette.primary.main,
               }}
             >
               ABOUT ME
             </Typography>
             <Typography
               variant="h5"
-              sx={{ textAlign: 'justify', lineHeight: 1.8, padding: '30px' }}
+              sx={{ textAlign: 'justify', lineHeight: 1.8, padding: '30px', color:theme.palette.primary.white }}
             >
-              I am a passionate software engineer with expertise in AI, Machine
+              I am a passionate software engineer with expertise in AI, Machine 
               Learning, and full-stack development. I have worked as a web
               developer and am now focusing on Large Language Models (LLMs),
               data engineering, and related fields. I aim to deliver scalable
@@ -121,7 +140,7 @@ export default function About() {
                 fontWeight: 'bold',
                 marginBottom: '10px',
                 textAlign: 'center',
-                color: theme.palette.secondary.main,
+                color: theme.palette.primary.main,
               }}
             >
               SKILLS
@@ -139,13 +158,14 @@ export default function About() {
                 'CSS3',
                 'JavaScript',
                 'ReactJS',
-                'MERN',
+                'MERN Stack',
                 'Data Analysis',
                 'Data Visualization',
                 'GIT',
                 'GitHub',
                 'Python',
                 'Machine Learning',
+                'Deep Learning',
                 "LLM's",
               ].map((skill) => (
                 <Chip
@@ -160,8 +180,9 @@ export default function About() {
                     boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)',
                     minWidth: '120px',
                     textAlign: 'center',
+                    color:theme.palette.primary.white,
                     '&:hover': {
-                      backgroundColor: theme.palette.secondary.main,
+                      backgroundColor: theme.palette.primary.main,
                       color: theme.palette.primary.dark,
                     }
                   }}
@@ -180,6 +201,7 @@ export default function About() {
           sx={{
             marginY: '30px',
             alignItems: 'flex-start',
+            color:theme.palette.primary.white
           }}
         >
           <Typography
@@ -188,7 +210,7 @@ export default function About() {
               fontWeight: 'bold',
               marginBottom: '10px',
               textAlign: 'center',
-              color: theme.palette.secondary.main,
+              color: theme.palette.primary.main,
             }}
           >
             MY JOURNEY
@@ -199,7 +221,7 @@ export default function About() {
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot
-                  sx={{ background: theme.palette.secondary.main }}
+                  sx={{ background: theme.palette.primary.main }}
                 />
                 <TimelineConnector />
               </TimelineSeparator>
@@ -207,7 +229,6 @@ export default function About() {
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   Web Developement
                 </Typography>
-
                 <Typography variant="body2">
                   Conestoga College, Kitchener, Canada
                 </Typography>
@@ -218,7 +239,7 @@ export default function About() {
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot
-                  sx={{ background: theme.palette.secondary.main }}
+                  sx={{ background: theme.palette.primary.main }}
                 />
                 <TimelineConnector />
               </TimelineSeparator>
@@ -226,9 +247,7 @@ export default function About() {
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                   Web Developer
                 </Typography>
-
                 <Typography variant="body2">
-                  {' '}
                   Tecforz Innovation kochi, Kerala, India
                 </Typography>
                 <Typography variant="body2" color='#ff9800'>2022 - 2023</Typography>
@@ -238,7 +257,7 @@ export default function About() {
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot
-                  sx={{ background: theme.palette.secondary.main }}
+                  sx={{ background: theme.palette.primary.main }}
                 />
                 <TimelineConnector />
               </TimelineSeparator>
@@ -256,7 +275,7 @@ export default function About() {
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot
-                  sx={{ background: theme.palette.secondary.main }}
+                  sx={{ background: theme.palette.primary.main }}
                 />
               </TimelineSeparator>
               <TimelineContent>
@@ -264,7 +283,6 @@ export default function About() {
                   Bachelor in Physics
                 </Typography>
                 <Typography variant="body2">
-                  {' '}
                   St Berchmans College, Changanacherry, India
                 </Typography>
                 <Typography variant="body2" color='#ff9800'>2015 - 2019</Typography>
